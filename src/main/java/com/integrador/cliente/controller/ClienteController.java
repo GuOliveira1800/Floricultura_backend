@@ -18,7 +18,7 @@ import com.integrador.cliente.service.ClienteService;
 
 @RestController
 @RequestMapping("/cliente")
-@CrossOrigin(origins = {"http://192.168.1.31:19000/","http://192.168.1.31:19000/","http://192.168.1.31:19000/"})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ClienteController {
 	
 	@Autowired

@@ -1,5 +1,7 @@
 package com.integrador.produto.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,11 @@ public class ProdutoService {
 	
 	public java.util.List<ProdutoDto> listar(int index){		
 		return produtoCustomRepository.getPagina(index);
+	}
+
+	public java.util.List<ProdutoDto> listarPorNome(String nome){
+		List<ProdutoDto> lista = produtoCustomRepository.getPorNome(nome);
+		return lista;
 	}
 	
 	public ProdutoEntity listarUnico(long codigoCliente){		

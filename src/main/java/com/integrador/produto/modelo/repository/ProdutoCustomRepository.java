@@ -33,5 +33,14 @@ public class ProdutoCustomRepository {
 
         return q.getResultList();
     }
+
+    public List<ProdutoDto> getPorNome(String nome) {
+
+        String query = "select P from produto as P where nome_prd like '%"+nome+"%' order by P.id desc";
+
+        var q = em.createQuery(query, ProdutoDto.class);
+
+        return q.getResultList();
+    }
 	
 }

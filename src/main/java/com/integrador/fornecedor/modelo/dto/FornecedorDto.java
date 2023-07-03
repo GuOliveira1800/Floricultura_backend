@@ -31,12 +31,11 @@ public class FornecedorDto {
 		
 		fornecedorEntity.setCodigo_for(this.codigo_for);
 		fornecedorEntity.setDocume_for(this.docume_for);
-		fornecedorEntity.setNome_for(this.nome_for);
+		fornecedorEntity.setNomeFor(this.nome_for);
 		fornecedorEntity.setTelefo_for(this.telefo_for);
 		fornecedorEntity.setFoto_for(this.foto_for);
-		fornecedorEntity.setCodend_for(enderecoEntity);		
-		fornecedorEntity.getCodend_for().setCep_end(this.cep_end);
-		
+		enderecoEntity.setCep_end(this.cep_end);
+		fornecedorEntity.setCodend_for(enderecoEntity);
 		
 		return fornecedorEntity;
 	}
@@ -44,7 +43,7 @@ public class FornecedorDto {
 	public FornecedorEntity dtoToEntity(FornecedorEntity fornecedorEntity) {
 		
 		fornecedorEntity.setDocume_for(this.docume_for);
-		fornecedorEntity.setNome_for(this.nome_for);
+		fornecedorEntity.setNomeFor(this.nome_for);
 		fornecedorEntity.setTelefo_for(this.telefo_for);
 		fornecedorEntity.setFoto_for(this.foto_for);
 		

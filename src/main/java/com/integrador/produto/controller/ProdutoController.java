@@ -19,7 +19,7 @@ import com.integrador.produto.service.ProdutoService;
 
 @RestController
 @RequestMapping("/produto")
-@CrossOrigin(origins = {"http://192.168.1.31:19006/","http://192.168.1.31:19000/","http://192.168.1.31:19000/"})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 	
 	@Autowired
@@ -39,6 +39,11 @@ public class ProdutoController {
 	public List<ProdutoDto> listar(@PathVariable int index){
 		System.out.println("teste");
 		return produtoService.listar(index);		
+	}
+
+	@GetMapping("/procura/{nome}")
+	public List<ProdutoDto> listar(@PathVariable String nome){
+		return produtoService.listarPorNome(nome);
 	}
 	
 	@GetMapping("/listar/unico/{codigoCliente}")

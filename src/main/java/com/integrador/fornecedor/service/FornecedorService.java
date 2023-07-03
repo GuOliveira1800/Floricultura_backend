@@ -64,7 +64,11 @@ public class FornecedorService {
 	public java.util.List<FornecedorEntity> listar(){		
 		return fornecedorRepository.findAll();
 	}
-	
+
+	public java.util.List<FornecedorEntity> listarPornome(String nome){
+		return fornecedorRepository.findByNomeForContains(nome);
+	}
+
 	public FornecedorEntity listar(long codigoFornecedor){		
 		Optional<FornecedorEntity> opFornecedor = this.fornecedorRepository.findById(codigoFornecedor);
 		

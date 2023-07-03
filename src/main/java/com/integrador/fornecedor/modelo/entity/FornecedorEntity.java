@@ -28,7 +28,7 @@ public class FornecedorEntity {
 	private Long codigo_for;
 	
 	@Column(name="nome_for")
-	private String nome_for;
+	private String nomeFor;
 	
 	@Column(name="docume_for")
 	private String docume_for;

@@ -15,7 +15,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		"com.integrador.produto.controller",
 		"com.integrador.fornecedor.modelo",
 		"com.integrador.fornecedor.service",
-		"com.integrador.fornecedor.controller"
+		"com.integrador.fornecedor.controller",
+		"com.integrador.entrada.modelo",
+		"com.integrador.entrada.service",
+		"com.integrador.entrada.controller"
 })
 
 public class FloriculturaApplication {

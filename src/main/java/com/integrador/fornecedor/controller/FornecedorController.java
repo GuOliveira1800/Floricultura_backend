@@ -18,7 +18,7 @@ import com.integrador.fornecedor.service.FornecedorService;
 
 @RestController
 @RequestMapping("/fornecedor")
-@CrossOrigin(origins = {"http://192.168.1.31:19000/","http://192.168.1.31:19000/","http://192.168.1.31:19000/"})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class FornecedorController {
 	
 	@Autowired
@@ -37,6 +37,11 @@ public class FornecedorController {
 	@GetMapping("/listar")
 	public List<FornecedorEntity> listar(){
 		return fornecedorService.listar();		
+	}
+
+	@GetMapping("/listar/filtro/{nome}")
+	public List<FornecedorEntity> listar(@PathVariable String nome){
+		return fornecedorService.listarPornome(nome) ;
 	}
 	
 	@GetMapping("/listar/{codigoFornecedor}")

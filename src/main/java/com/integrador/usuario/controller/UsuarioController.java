@@ -17,7 +17,7 @@ import com.integrador.usuario.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = {"http://192.168.1.31:19006/","http://192.168.1.31:19000/","http://192.168.1.31:19000/"})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 	
 	@Autowired

@@ -2,6 +2,7 @@ package com.integrador.produto.modelo.entity;
 
 import com.integrador.endereco.modelo.entity.EnderecoEntity;
 
+import com.integrador.produto.modelo.dto.ProdutoDto;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,5 +38,9 @@ public class ProdutoEntity {
 	
 	@Column(name="foto_prd")
 	private byte[] foto_prd;
+
+	public ProdutoDto entTodto(){
+		return new ProdutoDto(this.id, this.nome_prd, this.descri_prd, this.qtd_prd, this.valuni_prd, this.foto_prd);
+	}
 	
 }
