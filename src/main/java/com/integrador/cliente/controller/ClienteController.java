@@ -1,6 +1,7 @@
 package com.integrador.cliente.controller;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ import com.integrador.cliente.service.ClienteService;
 
 @RestController
 @RequestMapping("/cliente")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = {"http://192.168.1.22:19000/"})
 public class ClienteController {
 	
 	@Autowired
@@ -48,6 +49,11 @@ public class ClienteController {
 	@GetMapping("/listar/{codigoCliente}")
 	public ClienteEntity listar(@PathVariable long codigoCliente){		
 		return serviceCliente.listar(codigoCliente);
+	}
+
+	@GetMapping("/listar/nome/{nomeCliente}")
+	public Stream<ClienteEntity> listar(@PathVariable String nomeCliente){
+		return serviceCliente.listaPorNome(nomeCliente);
 	}
 
 	

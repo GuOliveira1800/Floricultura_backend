@@ -1,5 +1,6 @@
 package com.integrador.cliente.modelo.entity;
 
+import com.integrador.cliente.modelo.dto.ClienteDto;
 import com.integrador.endereco.modelo.entity.EnderecoEntity;
 
 import jakarta.persistence.CascadeType;
@@ -38,5 +39,9 @@ public class ClienteEntity {
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "codend_cli", referencedColumnName = "id")
 	private EnderecoEntity codend_cli;
+
+	public ClienteDto entToDto(){
+		return new ClienteDto(this.codigo_usu,this.nome_cli,this.docume_cli,this.codend_cli.getCep_end(),this.telefo_cli,this.foto_cli);
+	}
 	
 }

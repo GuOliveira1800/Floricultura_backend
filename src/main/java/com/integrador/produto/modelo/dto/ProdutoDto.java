@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProdutoDto {
 	
-	private Long codigo_prd;
+	private Long id;
 	private String nome_prd;
 	private String descri_prd;
 	private Long qtd_prd;
@@ -21,7 +21,7 @@ public class ProdutoDto {
 	public ProdutoEntity toEntity() {
 		ProdutoEntity produtoEntity = new ProdutoEntity();
 		
-		produtoEntity.setId(codigo_prd);
+		produtoEntity.setId(id);
 		produtoEntity.setDescri_prd(descri_prd);
 		produtoEntity.setNome_prd(nome_prd);
 		produtoEntity.setQtd_prd(qtd_prd);

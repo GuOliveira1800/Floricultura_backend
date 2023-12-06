@@ -1,5 +1,6 @@
 package com.integrador.endereco.modelo.entity;
 
+import com.integrador.endereco.modelo.dto.EnderecoDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,5 +29,10 @@ public class EnderecoEntity {
 	private String cidade_end;
 
 	@Column(name="rua_end")
-	private String rua_end;	
+	private String rua_end;
+
+	public EnderecoDto entToDto(){
+		return new EnderecoDto(this.codigo_end,this.cep_end,this.uf_end,this.cidade_end,this.uf_end);
+	}
+
 }

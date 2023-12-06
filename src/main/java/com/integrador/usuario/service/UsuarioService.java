@@ -23,15 +23,16 @@ public class UsuarioService {
 	@Autowired	
 	private UsuarioCustomRepository customRepository;
 	
-	public Long validar(Usuario usuario) {
+	public ResponseEntity<UsuarioEntity> validar(Usuario usuario) {
 				
-		List<UsuarioEntity> codigo =  this.customRepository.validar(usuario.getLogin_usu(), usuario.getSenha_usu());
-		
-		if(codigo.size() > 0) {
-			System.out.println(codigo.get(0).getCodigo_usu());
-			return codigo.get(0).getCodigo_usu();
+		List<UsuarioEntity> usuarioDto =  this.customRepository.validar(usuario.getLogin_usu(), usuario.getSenha_usu());
+
+		if(usuarioDto.size() > 0) {
+			System.out.println(usuarioDto.get(0).getCodigo_usu());
+			ResponseEntity<UsuarioEntity> response = new ResponseEntity<>(usuarioDto.get(0), HttpStatus.OK);
+			return response;
 		}else{
-			return null;
+			return new ResponseEntity<UsuarioEntity>(new UsuarioEntity(),HttpStatus.BAD_REQUEST);
 		}
 	}
 	

@@ -1,5 +1,7 @@
 package com.integrador.cliente.modelo.dto;
 
+import com.integrador.cliente.modelo.entity.ClienteEntity;
+import com.integrador.endereco.modelo.entity.EnderecoEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,4 +37,11 @@ public class ClienteDto {
 		this.cep_end = cep_end;
 		this.telefo_cli = telefo_cli;
 	}
+
+	public ClienteEntity toEntity(){
+		ClienteEntity clienteEntity = new ClienteEntity();
+		clienteEntity.setCodigo_usu(this.codigo_cli);
+		return clienteEntity;
+	}
+
 }

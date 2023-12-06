@@ -19,7 +19,7 @@ import com.integrador.produto.service.ProdutoService;
 
 @RestController
 @RequestMapping("/produto")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = {"http://192.168.1.22:19000/"})
 public class ProdutoController {
 	
 	@Autowired
