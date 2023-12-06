@@ -1,6 +1,7 @@
 package com.integrador.cliente.service;
 
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,5 +92,8 @@ public class ClienteService {
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
 	}
 
+	public Stream<ClienteEntity> listaPorNome(String nome){
+		return this.clienteRepository.findBynomeCliente(nome).stream();
+	}
 	
 }

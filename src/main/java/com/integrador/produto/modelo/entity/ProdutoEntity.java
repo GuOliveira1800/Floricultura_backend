@@ -39,8 +39,8 @@ public class ProdutoEntity {
 	@Column(name="foto_prd")
 	private byte[] foto_prd;
 
-	public ProdutoDto entTodto(){
-		return new ProdutoDto(this.id, this.nome_prd, this.descri_prd, this.qtd_prd, this.valuni_prd, this.foto_prd);
+	public ProdutoDto entTodto(Long qtd){
+		return new ProdutoDto(this.id, this.nome_prd, this.descri_prd, qtd, this.valuni_prd, this.foto_prd);
 	}
 	
 }

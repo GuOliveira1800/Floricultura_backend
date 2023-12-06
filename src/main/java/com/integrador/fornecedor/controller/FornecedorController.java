@@ -18,7 +18,7 @@ import com.integrador.fornecedor.service.FornecedorService;
 
 @RestController
 @RequestMapping("/fornecedor")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = {"http://192.168.1.22:19000/"})
 public class FornecedorController {
 	
 	@Autowired

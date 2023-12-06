@@ -17,14 +17,14 @@ import com.integrador.usuario.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = {"http://192.168.1.22:19000/"})
 public class UsuarioController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
 	
 	@PostMapping("/logar")
-	public Long validar(@RequestBody Usuario usuario) {	
+	public ResponseEntity<UsuarioEntity> validar(@RequestBody Usuario usuario) {
 		System.out.println(usuario);
 		return usuarioService.validar(usuario);
 	}
